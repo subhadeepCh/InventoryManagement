@@ -1,0 +1,86 @@
+html {
+  scroll-behavior: smooth;
+}
+.navbar-inverse .navbar-brand {
+	color:orange;
+}
+.edit{
+	margin-top:8px;
+}
+
+.loading{
+	color:#055902;
+	padding:20px;
+}
+.loaderwrapper {
+  width: 100%;
+  height: 100%;
+	z-index:9999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #36ad32;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  
+  border: 4px solid #Fff;
+  animation: loader 2s infinite ease;
+}
+/*=================================================*/
+body {
+  background-color:#dae3f2;
+}
+
+/*=================================================*/
+
+/*================================================*/
+
+
+/*====================================================*/
+.spinner {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+
+  margin: 100px auto;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+/*============================================*/
+
+    body > .grid {
+      height: 100%;
+    }
+    .image {
+      margin-top: -100px;
+    }
+    .column {
+      max-width: 450px;
+    }
+/*===================================================*/

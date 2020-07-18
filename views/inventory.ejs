@@ -1,0 +1,121 @@
+<%- include("partials/header") %>
+<%var d=0;store.forEach(function(item){if(item.owner.username===user.username){d=d+(item.Price*item.quantity)}});%>
+<%var c=0;store.forEach(function(item){if(item.owner.username===user.username){c=c+(item.quantity)}});%>
+<div style="margin-top:10%";>
+	<!--==========================CONTAINER STARTS=======================================-->
+	<div class="container">
+		<!--=======================ROW STARTS==========================================-->
+		<div class="row" style="display:flex;flex-wrap:wrap;">
+			<!--===========COLUMN STARTS==============-->
+			<div class="col-lg-4 col-sm-12" style="margin:20px auto;">
+				<!--===========ONE CARD==============-->
+			<div class="ui link centered card" style="background-color:#4287f5;">
+  <div class="content">
+    <div class="header">Inventory</div>
+  </div>
+  <div class="content">
+    <h4 class="ui sub header">Total Items : <%=c%></h4>
+    <div class="ui small feed">
+      <div class="event">
+        <div class="content">
+          <div class="summary">
+             Total Price : Rs. <%=d%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="extra content">
+    <a class="ui secondary button" href="/<%=user._id%>/store">View</a>
+  </div>
+</div>
+			<!--=======ONE CARD ENDS==================-->
+			</div>
+			<!--===========ABOVE DIV ENDS COLUMN==============-->
+			<!--===========COLUMN STARTS==============-->
+			<div class="col-lg-4 col-sm-12" style="margin:20px auto;">
+				<!--===========ONE CARD==============-->
+			<div class="ui link  centered  card" style="background-color:#f5bf42;">
+  <div class="content">
+    <div class="header">Order</div>
+  </div>
+  <div class="content">
+    <h4 class="ui sub header">List Of Items To Order</h4>
+    <div class="ui small feed">
+      <div class="event">
+        <div class="content">
+          <div class="summary">
+             By default as you consume from inventory, items will be added to order list
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="extra content">
+    <a class="ui secondary button" href="/<%=user._id%>/order">View</a>
+  </div>
+</div>
+			<!--=======ONE CARD ENDS==================-->
+			</div>
+			<!--===========ABOVE DIV ENDS COLUMN==============-->
+			<!--===========COLUMN STARTS==============-->
+			<div class="col-lg-4 col-sm-12" style="margin:20px auto;">
+				<!--===========ONE CARD==============-->
+			<div class="ui link  centered  card" style="background-color:#52d117;">
+  <div class="content">
+    <div class="header">Profile</div>
+  </div>
+  <div class="content">
+    <h4 class="ui sub header">Edit/View</h4>
+    <div class="ui small feed">
+      <div class="event">
+        <div class="content">
+          <div class="summary">
+             You can edit/delete/view your profile
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="extra content">
+    <a class="ui secondary button" href="/<%=user._id%>/Profile">View</a>
+  </div>
+</div>
+			<!--=======ONE CARD ENDS==================-->
+			</div>
+			<!--===========ABOVE DIV ENDS COLUMN==============-->
+			<!--===========COLUMN STARTS==============-->
+			<div class="col-lg-4 col-sm-12" style="margin:20px auto;">
+				<!--===========ONE CARD==============-->
+			<div class="ui  link centered  card" style="background-color:#e0104e;">
+  <div class="content">
+    <div class="header">Monthly Stats</div>
+  </div>
+  <div class="content">
+    <h4 class="ui sub header">Visualize your Expenditures : </h4>
+    <div class="ui small feed">
+      <div class="event">
+        <div class="content">
+          <div class="summary">
+             Expenditure vs Time Graph / Month
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="extra content">
+    <a class="ui secondary  button" href="/<%=user._id%>/stats">View</a>
+  </div>
+</div>
+			<!--=======ONE CARD ENDS==================-->
+			</div>
+			<!--===========ABOVE DIV ENDS COLUMN==============-->
+		</div>
+<!--=================================ABOVE DIV ENDS ROW================================-->
+	</div>
+	<!--=======================ABOVE DIV ENDS CONTAINER===========================================-->
+</div>
+<div style="margin-bottom:30%">
+	
+</div>
+<%- include("partials/footer") %>

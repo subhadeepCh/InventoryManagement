@@ -1,0 +1,42 @@
+<%- include("partials/header") %>
+<div style="margin-top:10%";>
+	<h2 class="ui center aligned icon header">
+  <i class="circular dropbox icon"></i>
+  <a href="/<%=user._id%>/inventory">Inventory</a>
+</h2>
+<div class="ui container">
+<table class="ui unstackable table">
+  <thead>
+    <tr>
+      <th>Item Name</th>
+      <th>Quantity</th>
+	  <th>Status</th>	
+      <th class="right aligned">Order</th>
+    </tr>
+  </thead>
+  <tbody>
+	 <%order.forEach(function(item){if(item.owner.username===user.username){%>
+    <tr>
+		<form action="/<%=user._id%>/order/<%=item._id%>?_method=PUT" method="post">
+			<td><div class="ui transparent input"><input type="text" value="<%=item.itemName%>"  name="store[itemName]" placeholder="Item Name"></div></td>
+      		<td><div class="ui transparent input"><input type="number" value="<%=item.quantity%>"  name="store[quantity]" placeholder="Quantity"></div></td>
+			<td>
+				<select <%if(item.status==="URGENT"){%>style="background:#a80505;color:white;"<%}%> class="ui dropdown" name="store[status]">
+				<option><span><%=item.status%></span></option>
+				<option value="NORMAL"><span>NORMAL</span></option>
+				<option value="URGENT"><span>URGENT</span></option>
+				</select>
+			</td>
+			<td class="right aligned"><button type="submit" formaction="/<%=user._id%>/order/<%=item._id%>?_method=DELETE" class="ui icon button"><i class="trash alternate icon"></i></button><button class="ui inverted secondary  button" type="submit">Update</button></td>
+		</form>
+      
+    </tr>
+	  <%}});%>
+  </tbody>
+</table>
+</div>
+</div>
+<div style="margin-bottom:30%">
+	
+</div>
+<%- include("partials/footer") %>

@@ -1,0 +1,213 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>Inventory Management System</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.css">
+		
+		<link rel="stylesheet" type="text/css" href="/app.css">
+	</head>
+	<body>
+		<!--========================================================-->
+		
+		<!--================NAVBAR===================-->
+		<div class="navbar-wrapper">
+			<div class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container-fluid">
+					 <div class="navbar-header">
+      					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+							data-target="#tocollapse" aria-expanded="false">
+        					<span class="sr-only">Toggle navigation</span>
+        					<span class="icon-bar"></span>
+        					<span class="icon-bar"></span>
+        					<span class="icon-bar"></span>
+      					</button>
+      					<i class="fas fa-map-signs navbar-brand"></i><a class="navbar-brand" href="/"> My SHOP</a>
+    				</div>
+					<div class="collapse navbar-collapse" id="tocollapse">
+						<ul class="nav navbar-nav">
+							
+							<li><a href="/">Home</a></li>
+							
+						
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#signup">Sign Up</a></li>
+							<li><a href="#login">Log In</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	<!--==========================================-->
+		<div class="container text-center">
+			<%if(error && error.length>0){%>
+			<div class="alert alert-danger" role="alert" style="z-index:99999;position:relative"><%=error%></div>
+			<%}%>
+			<%if(success && success.length>0){%>
+			<div class="alert alert-success" role="alert" style="z-index:99999;position:relative"><%=success%></div>
+			<%}%>
+		</div>
+		<!--==============BODY========================-->
+		<ul class="slideshow">
+      		<li></li>
+      		<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+   		</ul>    
+		<div class="heading">
+			<h1 style="font-size:8em">
+				Welcome
+			</h1>
+			<h3>
+				To
+			</h3>
+			<h2>
+				My SHOP
+			</h2>
+		
+		</div>
+		
+		<!--===============LOGIN FORM=================-->
+		<div style="margin:30% 0" > <span id="login"></span><h1>Hello</h1>
+			<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui image header">
+      
+      <div class="content" style="color:white;">
+       Log-in to your account
+      </div>
+    </h2>
+    <form class="ui large form" action="login" method="post">
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input type="text" name="username" placeholder="User Name">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input type="password" name="password" placeholder="Password">
+          </div>
+        </div>
+        <div class="ui fluid large green submit button">Login</div>
+      </div>
+
+      <div class="ui error message"></div>
+
+    </form>
+
+    <div class="ui message">
+      New to us? <a href="#signup">Sign Up</a>
+    </div>
+  </div>
+</div>
+		</div>
+		<!--================SIGNUP==========================-->
+		<div  style="margin:30% 0"><span id="signup"></span><h1>Hello</h1>
+			<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui image header">
+      
+      <div class="content" style="color:white;">
+       Sign Up to your account
+      </div>
+    </h2>
+    <form class="ui large form" action="/register" method="post" enctype="multipart/form-data">
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input type="text" name="username" placeholder="User Name" required>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input type="password" name="password" placeholder="Password">
+          </div>
+        </div>
+		  <!-- ==============-->
+		  <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input type="file" name="image" accept="image/*" placeholder="Profile Picture" required>
+          </div>
+        </div>
+		  <!-- =============-->
+		  <div style="margin-bottom:3px;" id="bar">
+		  <div id="myProgress">
+          <div id="myBar">10%</div>
+		   </div>
+			  </div>
+		  <!--===============-->
+       <div> <button type="submit" class="ui fluid large green submit button" onclick="move()">Sign UP</button></div>
+      </div>
+
+      <div class="ui error message"></div>
+
+    </form>
+
+    <div class="ui message">
+      Already a Customer? <a href="#login">Log In</a>
+    </div>
+  </div>
+</div>
+		</div>
+		
+		
+		
+		
+		
+		
+		<!--=====================LOADER ANIMATION===========================-->
+		<div class="loaderwrapper">
+    <div class="spinner"></div>
+	</div>
+		<!--==========================================================-->
+<div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">About</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Sitemap</a>
+            <a href="#" class="item">Contact Us: (+91) 9204782784</a>
+            <a href="https://www.linkedin.com/in/subhadeepchoudhuri" class="item">LinkedIn</a>
+            <a href="https://github.com/subhadeepCh" class="item">Github</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Services</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Any Website</a>
+            <a href="#" class="item">Using</a>
+            <a href="#" class="item">MERN</a>
+            <a href="#" class="item">STACK</a>
+          </div>
+        </div>
+         <div class="seven wide column">
+          <h4 class="ui inverted header">Subscribe my youtube Channel To view Code</h4>
+          <p><a href="https://www.youtube.com/channel/UCW1pZrQ2VuJoEiDnanvi39g">Click Here</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+		<!--========================================================-->
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>		
+	
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+		
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.js"></script>
+		<script type="text/javascript" src="/javascr.js"></script>
+	</body>
+</html>

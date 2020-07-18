@@ -1,0 +1,18 @@
+<%- include("partials/header") %>
+<div style="margin-top:10%;">
+	<div class="ui container">
+		<%user.forEach(function(u){%>
+		<div>
+			<img src="<%=u.image%>">
+		</div>
+		
+		<h1>
+			<%=u.username%>
+		</h1>
+		<%})%>
+	</div>
+</div>
+
+<div style="margin-bottom:30%;">
+</div>
+<%- include("partials/footer") %>

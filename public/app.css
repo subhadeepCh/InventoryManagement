@@ -1,0 +1,180 @@
+html {
+  scroll-behavior: smooth;
+}
+:root{
+	--theme : url(https://res.cloudinary.com/subhadeep/image/upload/q_62/v1595092448/lennon-cheng-2lkooyqeBe8-unsplash_ycearn.jpg);
+}
+.navbar-inverse .navbar-brand {
+	color:orange;
+}
+.edit{
+	margin-top:8px;
+}
+
+.loading{
+	color:#055902;
+	padding:20px;
+}
+.loaderwrapper {
+  width: 100%;
+  height: 100%;
+	z-index:9999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #36ad32;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  
+  border: 4px solid #Fff;
+  animation: loader 2s infinite ease;
+}
+/*=================================================*/
+body {
+  background-color: #000;
+}
+.slideshow { 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+    margin-top: 30px;
+  padding: 0;
+}
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 50s linear infinite; 
+}
+.slideshow li:nth-child(1) { 
+  background-image: var(--theme);
+}
+.slideshow li:nth-child(2) { 
+  background-image: var(--theme);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: var(--theme);
+  animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: var(--theme);
+  animation-delay: 30s; 
+}
+.slideshow li:nth-child(5) { 
+  background-image: var(--theme);
+  animation-delay: 40s; 
+}
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}
+/*=================================================*/
+.heading{
+	 z-index: 1;
+  position: relative;
+  text-align: center;
+  padding-top: 40vh;
+  color:white;
+}
+h1{
+	font-family: Helvetica;
+	font-size:4rem;
+}
+/*================================================*/
+
+.bodies{
+	background-color:black;
+	 z-index: 1;
+  position: relative;
+	color:white;
+	
+	margin-top:20rem;
+}
+/*====================================================*/
+.spinner {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+
+  margin: 100px auto;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+/*============================================*/
+
+    body > .grid {
+      height: 100%;
+    }
+    .image {
+      margin-top: -100px;
+    }
+    .column {
+      max-width: 450px;
+    }
+/*===================================================*/
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 10%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 30px;
+  color: white;

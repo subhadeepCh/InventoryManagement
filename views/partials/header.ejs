@@ -1,0 +1,54 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>Inventory Management System</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.css">
+		
+		<link rel="stylesheet" type="text/css" href="/rest.css">
+	</head>
+	<body>
+		<!--========================================================-->
+		
+		<!--================NAVBAR===================-->
+		<div class="navbar-wrapper">
+			<div class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container-fluid">
+					 <div class="navbar-header">
+      					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+							data-target="#tocollapse" aria-expanded="false">
+        					<span class="sr-only">Toggle navigation</span>
+        					<span class="icon-bar"></span>
+        					<span class="icon-bar"></span>
+        					<span class="icon-bar"></span>
+      					</button>
+      					<i class="fas fa-map-signs navbar-brand"></i><a class="navbar-brand" href="/"> My SHOP</a>
+    				</div>
+					<div class="collapse navbar-collapse" id="tocollapse">
+						<ul class="nav navbar-nav">
+							
+							<li><a href="/">Home</a></li>
+							
+						
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="/logout">Log Out</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	<!--==========================================-->
+		<div class="container text-center">
+			<%if(error && error.length>0){%>
+			<div class="alert alert-danger" role="alert" style="z-index:99999;position:relative"><%=error%></div>
+			<%}%>
+			<%if(success && success.length>0){%>
+			<div class="alert alert-success" role="alert" style="z-index:99999;position:relative"><%=success%></div>
+			<%}%>
+		</div>
+		<!--==============BODY========================-->

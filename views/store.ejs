@@ -1,0 +1,63 @@
+<%- include("partials/header") %>
+<div style="margin-top:10%";>
+	<div class="ui container">
+	<table class="ui unstackable table">
+  <thead>
+    <tr>
+      <th>Item Name</th>
+      <th>Quantity</th>
+	  <th>Price</th>
+	  <th>Date of Purchase</th>	
+      <th class="right aligned">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+		<form action="/<%=user._id%>/store" method="post">
+			<td><div class="ui transparent input"><input type="text" name="store[itemName]" placeholder="Item Name"></div></td>
+      		<td><div class="ui transparent input"><input type="number" name="store[quantity]" placeholder="Quantity"></div></td>
+			<td><div class="ui transparent input"><input type="number" name="store[Price]" placeholder="Price"></div></td>
+			<td><div class="ui disabled transparent input"><input type="text" placeholder="Automatically Added"></div></td>
+			<td class="right aligned"><button class="ui inverted secondary  button"type="submit">Add Field</button></td>
+		</form>
+      
+    </tr>
+  </tbody>
+</table>	
+	</div>
+	<!--========================================================================================================-->
+	<h2 class="ui center aligned icon header">
+  <i class="circular dropbox icon"></i>
+  <a href="/<%=user._id%>/inventory">Inventory</a>
+</h2>
+<div class="ui container">
+<table class="ui unstackable table">
+  <thead>
+    <tr>
+      <th>Item Name</th>
+      <th>Quantity</th>
+	  <th>Price</th>
+	  <th>Date of Purchase</th>	
+      <th class="right aligned">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+	 <%store.forEach(function(item){if(item.owner.username===user.username){%>
+    <tr>
+		<form action="/<%=user._id%>/store/<%=item._id%>?_method=PUT" method="post">
+			<td><div class="ui transparent input"><input type="text" value="<%=item.itemName.toUpperCase()%>"  name="store[itemName]" placeholder="Item Name"></div></td>
+      		<td><div class="ui transparent input"><input type="number" value="<%=item.quantity%>"  name="store[quantity]" placeholder="Quantity"></div></td>
+			<td><div class="ui transparent input"><input type="number" value="<%=item.Price%>"  name="store[Price]"  placeholder="Price"></div></td>
+			<td><div class="ui disabled transparent input"><input type="text" value="<%=item.purchased.toDateString()%>"placeholder="Date"></div></td>
+			<td class="right aligned"><button type="submit" formaction="/<%=user._id%>/store/<%=item._id%>?_method=DELETE" class="ui icon button"><i class="trash alternate icon"></i></button><button class="ui inverted secondary button" type="submit" formaction="/<%=user._id%>/order%>">Order</button> <button class="ui inverted secondary  button" type="submit">Update</button></td>
+		</form>
+      
+    </tr>
+	  <%}});%>
+  </tbody>
+</table>
+</div>
+<div style="margin-bottom:30%">
+	
+</div>
+<%- include("partials/footer") %>
